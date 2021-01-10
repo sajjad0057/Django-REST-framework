@@ -3,7 +3,7 @@ from .serializers import StatusSerializer  # Serializer Based on Status Model
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, CreateAPIView
+from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
 
 
 # Create your views here.
@@ -17,7 +17,7 @@ class StatusAPIView(APIView):
     
 
 # if Inherite ListAPIView class , no need to define get() func under customized class. 
-# know more about APIView and ListAPIView see documentation "API GUIDE ---> Generic views"
+# know more about APIView and ListAPIView  and all Generic view, See documentation "API GUIDE ---> Generic views"
 
 # Here StatusAPIView and StatusListAPIView provide same functionallity
 
@@ -26,9 +26,31 @@ class StatusListAPIView(ListAPIView):
     serializer_class = StatusSerializer
     
     
+    
+   
 class StatusCreateAPIView(CreateAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
     
     
+    
+    
+class StatusDetailAPIView(RetrieveAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    lookup_field = "id"
+    
+    
+ 
+    
+"""
+# we can use looup_field instead of this code
+    def get_object(self):
+        kwargs = self.kwargs
+        kw_id = kwargs.get('id')
+        return Status.objects.get(id=kw_id)
+
+"""
+    
+  
     
