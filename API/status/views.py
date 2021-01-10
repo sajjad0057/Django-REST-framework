@@ -8,6 +8,7 @@ from rest_framework.generics import (
     CreateAPIView ,
     RetrieveAPIView,
     UpdateAPIView,
+    DestroyAPIView,
     )
 
 
@@ -47,7 +48,7 @@ class StatusDetailAPIView(RetrieveAPIView):
     lookup_field = "id"
        
 """
-# we can use looup_field instead of this code
+# we can use lookup_field instead of this code
     def get_object(self):
         kwargs = self.kwargs
         kw_id = kwargs.get('id')
@@ -60,5 +61,13 @@ class StatusUpdateAPIView(UpdateAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
     lookup_field = "id"
-  
+    
+    
+
+
+class StatusDeleteAPIView(DestroyAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    lookup_field = "id"
+    
     

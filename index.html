@@ -14,12 +14,11 @@
         "image": null
     }
 
-      fetch("http://127.0.0.1:8000/apiV1/status/update/3/", {
-        method: "PATCH",
+      fetch("http://127.0.0.1:8000/apiV1/status/delete/4/", {
+        method: "DELETE",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(body),
       })
         .then((res) => console.log("create data successfully !"))
         .catch((err) => console.log(err.message));
