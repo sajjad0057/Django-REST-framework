@@ -10,13 +10,12 @@
     <hr />
     <script>
       let body = {
-        user: 1,
-        content: "I am From HTML file",
-        image: null,
-      };
+        "content": "I am From HTML file updated practice 2",
+        "image": null
+    }
 
-      fetch("http://127.0.0.1:8000/apiV1/statuscreate/", {
-        method: "POST",
+      fetch("http://127.0.0.1:8000/apiV1/status/update/3/", {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },

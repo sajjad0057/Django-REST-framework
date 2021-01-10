@@ -3,7 +3,13 @@ from .serializers import StatusSerializer  # Serializer Based on Status Model
 
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.generics import ListAPIView, CreateAPIView, RetrieveAPIView
+from rest_framework.generics import (
+    ListAPIView,
+    CreateAPIView ,
+    RetrieveAPIView,
+    UpdateAPIView,
+    )
+
 
 
 # Create your views here.
@@ -39,10 +45,7 @@ class StatusDetailAPIView(RetrieveAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
     lookup_field = "id"
-    
-    
- 
-    
+       
 """
 # we can use looup_field instead of this code
     def get_object(self):
@@ -51,6 +54,11 @@ class StatusDetailAPIView(RetrieveAPIView):
         return Status.objects.get(id=kw_id)
 
 """
-    
+
+
+class StatusUpdateAPIView(UpdateAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
+    lookup_field = "id"
   
     
