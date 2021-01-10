@@ -8,20 +8,13 @@
   <body>
     <h2>Testing REST API</h2>
     <hr />
-    <script>
-      let body = {
-        "content": "I am From HTML file updated practice 2",
-        "image": null
-    }
+    <div>
+        
 
-      fetch("http://127.0.0.1:8000/apiV1/status/delete/4/", {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      })
-        .then((res) => console.log("create data successfully !"))
-        .catch((err) => console.log(err.message));
-    </script>
+    </div>
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
