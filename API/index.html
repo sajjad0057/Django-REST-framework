@@ -9,7 +9,7 @@
     <h2>Testing REST API</h2>
     <hr>
     <Script>
-        fetch("http://127.0.0.1:8000/status/api/")
+        fetch("http://127.0.0.1:8000/apiV1/status/")
         .then(res=>res.json())
         .then(data=>console.log(data))
         .catch(err=>console.log(err.message))
