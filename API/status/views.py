@@ -26,7 +26,9 @@ class StatusListAPIView(ListAPIView):
     serializer_class = StatusSerializer
     
     
-
+class StatusCreateAPIView(CreateAPIView):
+    queryset = Status.objects.all()
+    serializer_class = StatusSerializer
     
     
     
