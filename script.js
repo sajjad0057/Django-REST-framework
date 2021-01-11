@@ -39,7 +39,7 @@
 
 // Delete Request :
 
-// axios.delete("http://127.0.0.1:8000/apiV1/status/delete/52/")
+// axios.delete("http://127.0.0.1:8000/apiV1/status/delete/7/")
 // .then(res=>console.log(res))
 // .catch(err=>console.log(err.message))
 
@@ -48,15 +48,15 @@
 
 
 // PUT or PATCH Request for update data :
-let updateData = {
+// let updateData = {
 
-    content: "I am Updated data using patch 1",
+//     content: "I am Updated data using patch 1",
 
-}
-axios.patch("http://127.0.0.1:8000/apiV1/status/update/8/",updateData,{
-    headers : {
-        "Content-Type" : "application/json"
-    }
-})
-.then(res=>console.log(res))
-.catch(err=>console.log(err.message))
+// }
+// axios.patch("http://127.0.0.1:8000/apiV1/status/update/8/",updateData,{
+//     headers : {
+//         "Content-Type" : "application/json"
+//     }
+// })
+// .then(res=>console.log(res))
+// .catch(err=>console.log(err.message))
