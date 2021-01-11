@@ -8,11 +8,20 @@
   <body>
     <h2>Testing REST API</h2>
     <hr />
-    <div>
-        
+    <div style="display: flex;justify-content: space-around;">
+      <div style="border: 1px solid rgb(97, 94, 94);border-radius:5px;padding:50px;">
+        <form id="myForm">
+          <input type="number" value="1" id="user" />
+          <hr />
+          <input type="text" value="I am content" id="content" />
+          <hr />
+          <input type="file" id="image" />
+          <hr />
+          <button id="submit" type="submit">Submit</button>
+        </form>
+      </div>
 
     </div>
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="script.js"></script>

@@ -1,8 +1,6 @@
 from .models import Status   # Main Model
 from .serializers import StatusSerializer  # Serializer Based on Status Model
-
-from rest_framework.views import APIView
-from rest_framework.response import Response
+from rest_framework.parsers import FormParser,MultiPartParser
 from rest_framework.generics import (
     ListCreateAPIView,
     RetrieveUpdateDestroyAPIView,
@@ -20,15 +18,17 @@ from rest_framework.generics import (
 class StatusListCreateView(ListCreateAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
+    parser_classes = [FormParser,MultiPartParser]
 
     
     
     
-# By using StatusDetailAPIView class we can  retrive , update and Detele data   
+# By using StatusDetailUpdateDeleteView class we can  retrive , update and Detele data   
     
-class StatusDetailAPIView(RetrieveUpdateDestroyAPIView):
+class StatusDetailUpdateDeleteView(RetrieveUpdateDestroyAPIView):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
     lookup_field = "id"
+    parser_classes = [FormParser,MultiPartParser]
     
     
