@@ -19,7 +19,7 @@ document.getElementById('myForm').addEventListener('submit',(e)=>{
     //     console.log(key ," : ",value)
     // }
 
-    axios.post("http://127.0.0.1:8000/apiV1/status/",form_data,{
+    axios.delete("http://127.0.0.1:8000/apiV1/status/57/",{
         header : {
             "Content-Type" : "application/json"
         }

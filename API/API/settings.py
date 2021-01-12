@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'rest_framework',
     # for django-cors-headers package
     'corsheaders',
+    # Django clean-up
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [
