@@ -1,14 +1,18 @@
 from django.urls import path
-from .views import StatusListCreateView, StatusDetailUpdateDeleteView
+from .views import StatusViewSet
+# If use ViewSet ,when need to routers, 
+# routers create automatically API end point, So we do't need to create URL 
+from rest_framework.routers import DefaultRouter
 
 
+router = DefaultRouter()
 
-# status/ -> List , Create => GET , POST
-# status/<id>/ -> Details, Delete, Update => GET ,DELETE, PUT/PATCH
+router.register(r'status',StatusViewSet,basename = "status")
+
+router
+
 
 
 urlpatterns = [
-    path('status/',StatusListCreateView.as_view()),
-    path('status/<id>/',StatusDetailUpdateDeleteView.as_view()),
 
-]
+] + router.urls

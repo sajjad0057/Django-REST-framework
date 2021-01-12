@@ -1,34 +1,25 @@
 from .models import Status   # Main Model
 from .serializers import StatusSerializer  # Serializer Based on Status Model
+#if we deal with file handling , Must include parsers , otherwise no need to include parsers
 from rest_framework.parsers import FormParser,MultiPartParser
-from rest_framework.generics import (
-    ListCreateAPIView,
-    RetrieveUpdateDestroyAPIView,
-    
-    )
+# Easely build  CRUD operation API and Perform CRUD operation on Model,By using just ViewSet 
+from rest_framework.viewsets import ModelViewSet
+
 
 
 
 # Create your views here.
 
-# mixins :
-
-# By using  StatusListCreateView class we can retrive and create data 
-
-class StatusListCreateView(ListCreateAPIView):
+# Easely build  CRUD operation API and Perform CRUD operation on Model,By using just ViewSet   
+   
+class StatusViewSet(ModelViewSet):
     queryset = Status.objects.all()
     serializer_class = StatusSerializer
+    
+    #if we deal with file handling , Must include parsers , otherwise no need to include parsers
+     
     parser_classes = [FormParser,MultiPartParser]
 
     
-    
-    
-# By using StatusDetailUpdateDeleteView class we can  retrive , update and Detele data   
-    
-class StatusDetailUpdateDeleteView(RetrieveUpdateDestroyAPIView):
-    queryset = Status.objects.all()
-    serializer_class = StatusSerializer
-    lookup_field = "id"
-    parser_classes = [FormParser,MultiPartParser]
     
     
